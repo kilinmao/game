@@ -50,8 +50,10 @@
     window.video = document.getElementById("myvideo");
     let game = new Game();
     trackButton.addEventListener("click", function (e) {
-            game.tracker.toggleVideo();
+            e.preventDefault()
             e.target.blur()
+            game.tracker.toggleVideo();
+            
         })
 
 
