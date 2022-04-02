@@ -55,11 +55,9 @@
         })
 
 
-    document.ontouchend = function (evt) {
-        evt.preventDefault()
+    document.ontouchend = function () {
         let box = document.getElementById("messageBox");
         box.style.visibility = "hidden";
-        alert('touch')
         if (game.isStart === false) {
             game.start();
         }
@@ -69,7 +67,6 @@
     document.onkeydown = function (evt) {
         evt = evt || window.event;
         if (evt.code == 'Space') {
-            evt.preventDefault()
             let box = document.getElementById("messageBox");
             box.style.visibility = "hidden";
             if(game.isStart === false){
