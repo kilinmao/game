@@ -49,14 +49,16 @@
     window.videoCtx = window.videoCanvas.getContext("2d")
     window.video = document.getElementById("myvideo");
     let game = new Game();
+
+    const stopProp = (e) => e.stopPropagation();
+    trackButton.addEventListener("touchstart", stopProp)
     trackButton.addEventListener("click", function (e) {
             e.target.blur()
             game.tracker.toggleVideo();
             
         })
 
-    const stopProp = (e) => e.stopPropagation();
-    trackButton.addEventListener("touchstart", stopProp)
+
 
 
     document.ontouchstart = function () {
