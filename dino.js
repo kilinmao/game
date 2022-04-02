@@ -88,7 +88,7 @@ class Tracker{
             iouThreshold: 0.5, // ioU threshold for non-max suppression
             scoreThreshold: 0.6, // confidence threshold for predictions.
         }
-        this.videoInterval = 10
+        this.videoInterval = 1
         this.midval_x = 0
         this.midval_y = 0
         this.model = null
@@ -234,7 +234,8 @@ export class Game{
             let that = this
             document.onkeydown = function (evt) {
                 evt = evt || window.event;
-                if (evt.code == 'Space' || 'touchstart') {
+                if (evt.code == 'Space' || evt.code == 'touchend') {
+                    evt.preventDefault()
                     that.player.isJump = true
                     that.player.speed = 0
                 }
