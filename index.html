@@ -50,14 +50,14 @@
     window.video = document.getElementById("myvideo");
     let game = new Game();
     trackButton.addEventListener("click", function (e) {
-            e.preventDefault()
             e.target.blur()
             game.tracker.toggleVideo();
             
         })
 
 
-    document.ontouchend = function () {
+    document.ontouchend = function (e) {
+        e.preventDefault()
         let box = document.getElementById("messageBox");
         box.style.visibility = "hidden";
         if (game.isStart === false) {
