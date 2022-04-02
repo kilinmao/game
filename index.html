@@ -57,7 +57,8 @@
     
     document.onkeydown = function (evt) {
         evt = evt || window.event;
-        if (evt.code == 'Space' || 'touchstart') {
+        if (evt.code == 'Space' || evt.code == 'touchend') {
+            evt.preventDefault()
             let box = document.getElementById("messageBox");
             box.style.visibility = "hidden";
             if(game.isStart === false){
