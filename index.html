@@ -54,10 +54,20 @@
             e.target.blur()
         })
 
+
+    document.ontouchend = function (evt) {
+        evt.preventDefault()
+        let box = document.getElementById("messageBox");
+        box.style.visibility = "hidden";
+        if (game.isStart === false) {
+            game.start();
+        }
+        };
+
     
     document.onkeydown = function (evt) {
         evt = evt || window.event;
-        if (evt.code == 'Space' || evt.code == 'touchend') {
+        if (evt.code == 'Space') {
             evt.preventDefault()
             let box = document.getElementById("messageBox");
             box.style.visibility = "hidden";

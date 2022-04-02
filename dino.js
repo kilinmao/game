@@ -232,9 +232,15 @@ export class Game{
             this.player.jump()
 
             let that = this
+
+            document.ontouchend = function (evt) {
+                evt.preventDefault()
+                that.player.isJump = true
+                that.player.speed = 0
+            };
             document.onkeydown = function (evt) {
                 evt = evt || window.event;
-                if (evt.code == 'Space' || evt.code == 'touchend') {
+                if (evt.code == 'Space') {
                     evt.preventDefault()
                     that.player.isJump = true
                     that.player.speed = 0
