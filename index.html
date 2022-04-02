@@ -55,9 +55,11 @@
             
         })
 
+    const stopProp = (e) => e.stopPropagation();
+    trackButton.addEventListener("touchstart", stopProp)
 
-    document.ontouchend = function (e) {
-        e.preventDefault()
+
+    document.ontouchstart = function () {
         let box = document.getElementById("messageBox");
         box.style.visibility = "hidden";
         if (game.isStart === false) {

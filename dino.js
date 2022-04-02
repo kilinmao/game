@@ -233,8 +233,7 @@ export class Game{
 
             let that = this
 
-            document.ontouchend = function (e) {
-                e.preventDefault()
+            document.ontouchstart = function () {
                 that.player.isJump = true
                 that.player.speed = 0
             };
