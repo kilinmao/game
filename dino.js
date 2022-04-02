@@ -226,7 +226,7 @@ export class Game{
     jump(){
         if(this.tracker.isVideo === true){
             this.player.isVideo = true
-            this.player.pos.dy = this.tracker.midval_y - 100
+            this.player.pos.dy = this.tracker.midval_y - 70
         }
         else {
             this.player.jump()
