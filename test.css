@@ -3,3 +3,26 @@
 	height: 12px;
 	visibility: hidden;
 }
+
+
+#canvas {
+	width: 90vw;
+	height: 50vw;
+	max-width: 600px;
+	max-height: 300px;
+	margin-bottom: 5px;
+}
+
+#videoCanvas {
+	width: 90vw;
+	height: 50vw;
+	max-width: 600px;
+	max-height: 300px;
+
+}
+
+body{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
